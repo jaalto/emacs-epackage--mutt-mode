@@ -1,0 +1,22 @@
+Package: mutt-mode
+Section: extensions
+License: GPL
+Depends: emacs (>= 22)
+Status: unmaintained
+Archive:
+Compat:
+Maintainer: Jari Aalto <jari.aalto@cante.net>
+Bugs:
+Upstream: Eric Kidd (probably bogus address) <eric.kidd@pobox.com>
+Upstream-Bugs:
+Vcs-Type: http
+Vcs-Url: http://www.emacswiki.org/emacs/download/mutt.el
+Homepage:
+Wiki: http://www.emacswiki.org/emacs/Mutt
+Commentary: mutt.el
+Description: major mode for editing messages from mutt(1) MUA.
+ In mutt(1), when you compose mail, you can use running Emacs in
+ server mode to edit the message. For more details, see
+ <http://www.emacswiki.org/emacs/MuttInEmacs>.
+ .
+ Note: 2012-01-13 the code hasn't been touched since 1998.
