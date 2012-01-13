@@ -178,7 +178,10 @@ trailing whitespace."
   ;; Added by Rob Reid 10/13/1998 to prevent accumulating *Composing* buffers
   ;; when using (emacs|gnu)client.  Helped by Eric Marsden's Eliza example in
   ;; http://www.ssc.com/lg/issue29/marsden.html
-  (server-edit)
+
+  (when (and (bound 'server-process)
+	     server-process)
+    (server-edit))
 
   (let ((buf (get-buffer "*Composing*")))
     (if buf (kill-buffer buf)))
@@ -365,7 +368,7 @@ When you finish editing this message, type \\[mutt-save-current-buffer-and-exit]
 ;;; Menus
 
 (easy-menu-define
- mutt-mode-menu mutt-mode-map "Mutt Message Composition Commands." 
+ mutt-mode-menu mutt-mode-map "Mutt Message Composition Commands."
  '("Mutt"
    ["Delete Quoted Signatures" mutt-delete-quoted-signatures t]
    ["Delete Doubly-Quoted Text" mutt-delete-old-citations t]
