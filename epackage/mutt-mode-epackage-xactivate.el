@@ -1,10 +1,12 @@
 ;; Say, you use mutt(1) to read your mail. But you want to write your
 ;; mails (compose, reply...) with Emacs from mutt.
 
+(defvar server-process)
+
 (defun mutt-mode-epackage-activate ()
   "For mutt(1) buffer sent to Emacs, turn on `mutt-mode'."
-  (when (and (bound 'server-process)
-             server-process
+  (when (and (boundp 'server-process)
+	     server-process
 	     (boundp 'mutt-mode))
     (mutt-mode)))
 
