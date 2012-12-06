@@ -10,9 +10,14 @@
 	     (fboundp 'mutt-mode))
     (mutt-mode)))
 
-(add-to-list 'auto-mode-alist '("^mutt-.*[0-9]$" . mutt-mode-epackage-activate))
+(add-to-list 'auto-mode-alist
+	     '("^mutt-.*[0-9]$" . mutt-mode-epackage-activate))
 
 (unless (memq system-type '(windows-nt msdos))
+  (setq server-auth-dir "~/.emacs.d/server/") ;; Default location
+  ;; server-start calls server-ensure-safe-dir which could error out
+  ;; for server-socket-dir located in /tmp
+  (setq server-socket-dir server-auth-dir)
   (server-start))
 
 (provide 'mutt-mode-epackage-xactivate)
