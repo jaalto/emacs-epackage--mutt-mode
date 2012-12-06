@@ -2,6 +2,8 @@
 ;; mails (compose, reply...) with Emacs from mutt.
 
 (defvar server-process)
+(defvar server-auth-dir)
+(defvar server-socket-dir)
 
 (defun mutt-mode-epackage-activate ()
   "For mutt(1) buffer sent to Emacs, turn on `mutt-mode'."
